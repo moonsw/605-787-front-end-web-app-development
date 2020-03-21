@@ -38,7 +38,7 @@
     var self = this;
 
     // List of items to buy
-    var toBuyList = [new Item('Hat', 1, 10), new Item('Shirt', 1, 20), new Item('Pants', 1, 20), new Item('Belt', 1, 10), new Item('Socks', 1, 5), new Item('Shoes', 1, 20)];
+    var toBuyList = [new Item('Hat', 1, 10.00), new Item('Shirt', 1, 20.00), new Item('Pants', 1, 20.00), new Item('Belt', 1, 10.00), new Item('Socks', 1, 5.00), new Item('Shoes', 1, 20.00)];
     // List of bought items
     var boughtList = [];
 
@@ -59,8 +59,8 @@
 
   function CurrencyFilter() {
     return function (input) {
-      input = input || "0";
-      return "$$$" + input;
+      input = input || 0.00;
+      return "$$$" + input.toFixed(2);
     }
   }
 })();
