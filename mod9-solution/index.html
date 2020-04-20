@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="MenuApp">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>EN.605.787 Front End Web Application Development Module 9 Solution</title>
+  </head>
+  <body>
+    <!-- <h1>Welcome to Premade No Cookie Shopping List</h1> -->
+
+    <ui-view></ui-view>
+
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/menuapp.module.js"></script>
+    <script src="src/data.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- Services -->
+    <script src="src/menudata.service.js"></script>
+
+    <!-- 'Categories' artifacts -->
+    <script src="src/categories/categories.component.js"></script>
+    <script src="src/categories/categories.controller.js"></script>
+
+    <!-- 'Items' artifacts -->
+    <script src="src/items/items.component.js"></script>
+    <script src="src/items/items.controller.js"></script>
+  </body>
+</html>
