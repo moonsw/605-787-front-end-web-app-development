@@ -1,0 +1,46 @@
+<div class="container">
+  <fieldset>
+    <legend class="signup-legend">Sign Up</legend>
+    <form name='regForm' novalidate>
+      First name: 
+      <input class="signup-input" type="text" name="firstName" ng-model="signupCtrl.firstName" required>
+      <span ng-if="regForm.firstName.$invalid && regForm.firstName.$touched">
+        Please enter a first name
+      </span>
+      <br>
+      Last name:
+      <input class="signup-input" type="text" name="lastName" ng-model="signupCtrl.lastName" required>
+      <span ng-if="regForm.lastName.$invalid && regForm.lastName.$touched">
+        Please enter a last name
+      </span>
+      <br> 
+      Email:
+      <input class="signup-input" type="email" name="email" ng-model="signupCtrl.email" required>
+      <span ng-if="regForm.firstName.$invalid && regForm.email.$touched">
+        Please enter a valid email
+      </span>
+      <br> 
+      Phone #:
+      <input class="signup-input" type="tel" name="phoneNumber" ng-model="signupCtrl.phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+      <span ng-if="regForm.phoneNumber.$invalid && regForm.phoneNumber.$touched">
+        Phone must be in the format ###-###-####
+      </span>
+      <br> 
+      Menu #:
+      <input class="signup-input" type="text" name="menuNumber" ng-model="signupCtrl.menuNumber" ng-blur="signupCtrl.getMenuItem()" required>
+      <span ng-if="regForm.menuNumber.$invalid && regForm.menuNumber.$touched">
+        Please enter a menu number
+      </span>
+      <br> 
+      <button class="signup-button" ng-disabled="regForm.$invalid || (signupCtrl.menuNotExist !== undefined && signupCtrl.menuNotExist)" ng-click="signupCtrl.submit()">
+        Submit
+      </button>
+    </form>
+  </fieldset>
+  <div class="error" ng-show="signupCtrl.menuNotExist">
+    No such menu number exists
+  </div>
+  <div class="error" ng-show="signupCtrl.infoSaved">
+    Your information has been saved
+  </div>
+</div>
